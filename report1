@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AIリスニング＆レポートアプリ</title>
+<style>
+:root {
+  --accent:#6b9dfc;
+  --bg:#f7f9ff;
+  --card:#fff;
+  --text:#333;
+  --radius:18px;
+  font-family:"Noto Sans JP",sans-serif;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  line-height: 1.7;
+}
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, var(--accent), #92c9ff);
+  color: white;
+}
+h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+section {
+  max-width: 900px;
+  margin: 3rem auto;
+  background: var(--card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+h2 {
+  border-left: 6px solid var(--accent);
+  padding-left: 0.6rem;
+}
+.demo {
+  text-align: center;
+  margin: 2rem 0;
+}
+.demo video, .demo audio {
+  width: 80%;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.feature {
+  background: #f0f5ff;
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🎧 AIリスニングチェック＆音声レポート自動生成</h1>
+  <p>音声を「聞く」「話す」「まとめる」まで、AIがすべてサポート。</p>
+</header>
+
+<section>
+  <h2>🗣️ 機能概要</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>1️⃣ リスニングチェック</h3>
+      <p>英文をAIが再生。ユーザーが復唱すると、音声認識で正答率を自動判定。</p>
+    </div>
+    <div class="feature">
+      <h3>2️⃣ スコア化＆フィードバック</h3>
+      <p>発音精度・一致率・速度などをAIが分析し、スコアを算出。</p>
+    </div>
+    <div class="feature">
+      <h3>3️⃣ 音声レポート生成</h3>
+      <p>音声を自動でテキスト化し、Word / PDF形式でレポートを出力。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>💻 技術構成</h2>
+  <ul>
+    <li><strong>フロントエンド：</strong>Streamlit + HTML / CSS / JavaScript</li>
+    <li><strong>音声処理：</strong>Google Speech-to-Text API, Whisper API</li>
+    <li><strong>スコアリングAI：</strong>OpenAI GPT-5 + BERT比較モデル</li>
+    <li><strong>レポート生成：</strong>Python-docx / ReportLab</li>
+  </ul>
+</section>
+
+<section>
+  <h2>🎮 動作デモ</h2>
+  <div class="demo">
+    <video controls>
+      <source src="demo.mp4" type="video/mp4">
+      デモ動画を再生できません。
+    </video>
+  </div>
+</section>
+
+<section>
+  <h2>📈 出力サンプル</h2>
+  <p>AIが生成したレポートの一部を以下に示します。</p>
+  <img src="report_sample.png" alt="レポートサンプル" style="width:100%;border-radius:var(--radius);box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+</section>
+
+<footer>
+  © 2025 Listening AI Lab | Developed by 天池 渚
+</footer>
+</body>
+</html>
